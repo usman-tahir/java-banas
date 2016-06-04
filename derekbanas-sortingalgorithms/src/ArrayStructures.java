@@ -11,7 +11,7 @@ public class ArrayStructures {
 			theArray[i] = (int)(Math.random()*10)+10;
 			
 		}
-		
+		//
 	}
 	
 	public void printArray(){
