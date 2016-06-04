@@ -2,6 +2,7 @@ public class ArrayStructures {
 		
 	private int[] theArray = new int[50];
 	
+	
 	private int arraySize = 10;
 	
 	public void generateRandomArray(){
@@ -12,6 +13,20 @@ public class ArrayStructures {
 			
 		}
 		//
+	}
+	
+	public void generateStaticArray()
+	{
+		theArray[0] = 0;
+		theArray[1] = 3;
+		theArray[2] = 1;
+		theArray[3] = 8;
+		theArray[4] = 7;
+		theArray[5] = 2;
+		theArray[6] = 5;
+		theArray[7] = 4;
+		theArray[8] = 6;
+		theArray[9] = 9;
 	}
 	
 	public void printArray(){
@@ -82,6 +97,10 @@ public class ArrayStructures {
 		
 	}
 	
+	/*
+	 * Linear Search
+	 */
+	
 	public String linearSearchForValue(int value){
 		
 		boolean valueInArray = false;
@@ -90,10 +109,12 @@ public class ArrayStructures {
 		
 		for(int i = 0; i < arraySize; i++){
 			
+			// Is the element value of the specified index equal to the search for value?
 			if(theArray[i] == value){
 				
 				valueInArray = true;
 				
+				// If it is we are going to add it to indexsWithValue
 				indexsWithValue+= i + " ";
 				
 			}
@@ -136,7 +157,7 @@ public void printHorzArray(int i, int j){
 		
 		for(int n = 0; n < arraySize; n++){
 			
-			System.out.print("| " + theArray[n] + " ");
+			System.out.print("|  " + theArray[n] + " ");
 			
 		}
 		
@@ -205,6 +226,9 @@ public void printHorzArray(int i, int j){
 						printHorzArray(i, j);
 						
 					}
+				
+					// You may want to comment out to make less verbose 
+					printHorzArray(i, j);
 					
 				}
 				
@@ -231,16 +255,22 @@ public void printHorzArray(int i, int j){
 		
 		public void binarySearchForValue(int value){
 			
+			// minimum search area we are going to be looking for
 			int lowIndex = 0;
+			// maximum search area
 			int highIndex = arraySize - 1;
 			
 			while(lowIndex <= highIndex){
 				
+				// educated guess
 				int middleIndex = (highIndex + lowIndex) / 2;
 				
-				if(theArray[middleIndex] < value) lowIndex = middleIndex + 1;
 				
-				else if(theArray[middleIndex] > value) highIndex = middleIndex - 1;
+				if(theArray[middleIndex] < value) 
+					lowIndex = middleIndex + 1;
+				
+				else if(theArray[middleIndex] > value) 
+					highIndex = middleIndex - 1;
 				
 				else {
 					
@@ -313,20 +343,45 @@ public void printHorzArray(int i, int j){
 		
 		ArrayStructures newArray = new ArrayStructures();
 		
-		newArray.generateRandomArray();
+		//newArray.generateRandomArray();
+		
+		newArray.generateStaticArray();
 		
 		newArray.printHorzArray(-1,-1);
 		
-		// newArray.linearSearchForValue(10);
+		/*
+		 * Checks each index one by one
+		 * If equal then index is stored 
+		 */
+		//newArray.linearSearchForValue(18);
 		
-		// newArray.bubbleSort();
 		
-		// We must Sort first
+		/*
+		 * Sorts smallest to largest or largest to smallest
+		 * Checks two indexs to determine if swap is needed
+		 * 
+		 */
+		//newArray.bubbleSort();
 		
-		// newArray.binarySearchForValue(17);
+		/* Quicker than linear search
+		 * We must Sort first
+		 * Can not find duplicates, because it is only going to find the first match
+		 */
+		//newArray.binarySearchForValue(8);
 		
-		// newArray.selectionSort();
 		
+		/*
+		 * Save a number in a minimum spot as it finds it and 
+		 * then repeat searching through the whole entire array 
+		 * each time to slowly put the entire array in order
+		 */
+		//newArray.selectionSort();
+		
+		/*
+		 * Normally the best of all elementary sorts
+		 * Search through the array and find a minimum
+		 * by skipping multiple indexs
+		 */
 		newArray.insertionSort();
 		
 	}
