@@ -53,15 +53,19 @@ public class TheQueue {
 			
 			insert(input);
 			
-		} else {
+		} 
+		else 
+		{
 			
 			for(i = numberOfItems-1; i >= 0; i--){
 				
-				if(Integer.parseInt(input) > Integer.parseInt(queueArray[i])){
+				if(Integer.parseInt(input) > Integer.parseInt(queueArray[i]))
+				{
 					
 					queueArray[i+1] = queueArray[i];
 					
-				} else break; // Done shifting items in queue
+				} 
+				else break; // Done shifting items in queue
 				
 			}
 			
@@ -75,9 +79,11 @@ public class TheQueue {
 		
 	}
 	
-	public void remove(){
+	public void remove()
+	{
 		
-		if(numberOfItems > 0){
+		if(numberOfItems > 0)
+		{
 			
 			System.out.println("REMOVE " + queueArray[front] + " Was Removed From the Queue\n");
 			
@@ -89,7 +95,9 @@ public class TheQueue {
 		
 			numberOfItems--;
 		
-		} else {
+		} 
+		else 
+		{
 			
 			System.out.println("Sorry But the Queue is Empty");
 			
@@ -161,13 +169,13 @@ public class TheQueue {
 		
 		TheQueue theQueue = new TheQueue(10);
 		
-		theQueue.priorityInsert("16");
+		//theQueue.priorityInsert("16");
 		
-		theQueue.priorityInsert("25");
+		//theQueue.priorityInsert("25");
 		
-		theQueue.priorityInsert("10");
+		//theQueue.priorityInsert("10");
 		
-		/*
+		
 		theQueue.insert("10");
 		
 		theQueue.displayTheQueue();
@@ -185,19 +193,21 @@ public class TheQueue {
 		theQueue.displayTheQueue();
 		
 		theQueue.insert("25");
+		
+		theQueue.displayTheQueue();
+		
+		
+		theQueue.remove();
+		
+		/*
+		theQueue.displayTheQueue();
+		
+		theQueue.remove();
 		*/
-		
-		theQueue.displayTheQueue();
-		
-		theQueue.remove();
-		
-		theQueue.displayTheQueue();
-		
-		theQueue.remove();
-		
 		theQueue.displayTheQueue();
 		
 		theQueue.peek();
+		
 		
 	}
 
